@@ -1,0 +1,99 @@
+============================================================
+ DINING PHILOSOPHERS PROBLEM (Semaphores + Waiter)
+============================================================
+ Philosophers : 5
+ Forks        : 5
+ Meals each   : 2
+ Room limit   : 4 philosophers at a time (prevents deadlock)
+============================================================
+[  0.00s] Philosopher 0 is THINKING
+[  0.00s] Philosopher 1 is THINKING
+[  0.00s] Philosopher 3 is THINKING
+[  0.00s] Philosopher 2 is THINKING
+[  0.00s] Philosopher 4 is THINKING
+[  0.42s] Philosopher 3 is HUNGRY (wants fork 3 and fork 4)
+[  0.43s] Philosopher 3 picked up LEFT fork 3
+[  0.43s] Philosopher 3 picked up RIGHT fork 4
+[  0.43s] Philosopher 3 is EATING  (meal 1/2, waited 0.01s)
+          Table: P0:THINKING | P1:THINKING | P2:THINKING | P3:EATING | P4:THINKING
+[  0.49s] Philosopher 1 is HUNGRY (wants fork 1 and fork 2)
+[  0.49s] Philosopher 1 picked up LEFT fork 1
+[  0.49s] Philosopher 1 picked up RIGHT fork 2
+[  0.49s] Philosopher 1 is EATING  (meal 1/2, waited 0.00s)
+          Table: P0:THINKING | P1:EATING | P2:THINKING | P3:EATING | P4:THINKING
+[  0.54s] Philosopher 2 is HUNGRY (wants fork 2 and fork 3)
+[  0.58s] Philosopher 0 is HUNGRY (wants fork 0 and fork 1)
+[  0.58s] Philosopher 0 picked up LEFT fork 0
+[  0.59s] Philosopher 4 is HUNGRY (wants fork 4 and fork 0)
+[  0.71s] Philosopher 1 put down forks 1 and 2
+[  0.71s] Philosopher 1 is THINKING
+[  0.71s] Philosopher 2 picked up LEFT fork 2
+[  0.71s] Philosopher 0 picked up RIGHT fork 1
+[  0.71s] Philosopher 0 is EATING  (meal 1/2, waited 0.13s)
+          Table: P0:EATING | P1:THINKING | P2:HUNGRY | P3:EATING | P4:HUNGRY
+[  0.88s] Philosopher 3 put down forks 3 and 4
+[  0.88s] Philosopher 3 is THINKING
+[  0.88s] Philosopher 2 picked up RIGHT fork 3
+[  0.88s] Philosopher 2 is EATING  (meal 1/2, waited 0.34s)
+          Table: P0:EATING | P1:THINKING | P2:EATING | P3:THINKING | P4:HUNGRY
+[  0.88s] Philosopher 4 picked up LEFT fork 4
+[  0.93s] Philosopher 0 put down forks 0 and 1
+[  0.93s] Philosopher 0 is THINKING
+[  0.93s] Philosopher 4 picked up RIGHT fork 0
+[  0.93s] Philosopher 4 is EATING  (meal 1/2, waited 0.34s)
+          Table: P0:THINKING | P1:THINKING | P2:EATING | P3:THINKING | P4:EATING
+[  1.28s] Philosopher 1 is HUNGRY (wants fork 1 and fork 2)
+[  1.28s] Philosopher 1 picked up LEFT fork 1
+[  1.28s] Philosopher 4 put down forks 4 and 0
+[  1.28s] Philosopher 4 is THINKING
+[  1.33s] Philosopher 2 put down forks 2 and 3
+[  1.33s] Philosopher 2 is THINKING
+[  1.33s] Philosopher 1 picked up RIGHT fork 2
+[  1.33s] Philosopher 1 is EATING  (meal 2/2, waited 0.05s)
+          Table: P0:THINKING | P1:EATING | P2:THINKING | P3:THINKING | P4:THINKING
+[  1.45s] Philosopher 0 is HUNGRY (wants fork 0 and fork 1)
+[  1.45s] Philosopher 0 picked up LEFT fork 0
+[  1.46s] Philosopher 3 is HUNGRY (wants fork 3 and fork 4)
+[  1.46s] Philosopher 3 picked up LEFT fork 3
+[  1.46s] Philosopher 3 picked up RIGHT fork 4
+[  1.46s] Philosopher 3 is EATING  (meal 2/2, waited 0.00s)
+          Table: P0:HUNGRY | P1:EATING | P2:THINKING | P3:EATING | P4:THINKING
+[  1.58s] Philosopher 4 is HUNGRY (wants fork 4 and fork 0)
+[  1.65s] Philosopher 1 put down forks 1 and 2
+[  1.65s] Philosopher 1 has FINISHED all 2 meals
+[  1.65s] Philosopher 0 picked up RIGHT fork 1
+[  1.65s] Philosopher 0 is EATING  (meal 2/2, waited 0.20s)
+          Table: P0:EATING | P1:DONE | P2:THINKING | P3:EATING | P4:HUNGRY
+[  1.92s] Philosopher 2 is HUNGRY (wants fork 2 and fork 3)
+[  1.92s] Philosopher 2 picked up LEFT fork 2
+[  1.93s] Philosopher 3 put down forks 3 and 4
+[  1.93s] Philosopher 3 has FINISHED all 2 meals
+[  1.93s] Philosopher 2 picked up RIGHT fork 3
+[  1.93s] Philosopher 2 is EATING  (meal 2/2, waited 0.01s)
+          Table: P0:EATING | P1:DONE | P2:EATING | P3:DONE | P4:HUNGRY
+[  1.93s] Philosopher 4 picked up LEFT fork 4
+[  2.02s] Philosopher 0 put down forks 0 and 1
+[  2.02s] Philosopher 0 has FINISHED all 2 meals
+[  2.02s] Philosopher 4 picked up RIGHT fork 0
+[  2.02s] Philosopher 4 is EATING  (meal 2/2, waited 0.43s)
+          Table: P0:DONE | P1:DONE | P2:EATING | P3:DONE | P4:EATING
+[  2.29s] Philosopher 4 put down forks 4 and 0
+[  2.29s] Philosopher 4 has FINISHED all 2 meals
+[  2.33s] Philosopher 2 put down forks 2 and 3
+[  2.33s] Philosopher 2 has FINISHED all 2 meals
+
+============================================================
+ SUMMARY
+============================================================
+ Philosopher Meals Eaten   Total Wait (s)  Avg Wait (s)
+ P0          2             0.33            0.17
+ P1          2             0.05            0.03
+ P2          2             0.36            0.18
+ P3          2             0.01            0.00
+ P4          2             0.77            0.39
+------------------------------------------------------------
+ Total meals eaten : 10 (expected 10)
+ Average wait time : 0.15 s per meal
+ Total run time    : 2.33 s
+ Result            : All philosophers finished all meals. NO DEADLOCK.
+============================================================
